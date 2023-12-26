@@ -2,6 +2,15 @@ import {Link} from "react-router-dom";
 
 function ProductCard(props) {
 	console.log(props);
+	const handleDelete = (productId) => {
+		// Silme işlemi burada gerçekleştirilir
+		console.log("Ürün silindi:", productId);
+		// Burada API çağrısı veya başka bir silme işlemi yapılabilir
+	  };
+
+	
+
+
 	return (
 		<div class="card">
 			<img
@@ -15,7 +24,8 @@ function ProductCard(props) {
 				<Link to={"/products?id=" + props.product.id} class="btn btn-primary">
 					Detail
 				</Link>
-				<button className="btn btn-danger">Sil</button>
+				<button className="btn btn-danger"
+          onClick={() => handleDelete(props.product.id)}>Sil</button>
 			</div>
 		</div>
 	);
